@@ -1,0 +1,18 @@
+{
+  "name": "Scraping HTML of Current Page",
+  "version": "1.0.0",
+  "description": "this is a chrome extension that scrapes the HTML of the current page and sends it to a server",
+  "manifest_version": 3,
+  "author": "Dipan Chhabra",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Scraping HTML of Current Page"
+  },
+  "permissions": ["activeTab", "storage", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./js/content-script.js"]
+    }
+  ]
+}
