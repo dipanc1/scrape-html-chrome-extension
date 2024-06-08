@@ -16,13 +16,24 @@ if (button) {
                         document.querySelector('button').innerText = "Saving...";
                         document.querySelector('p').innerText = response;
 
-                        xhr.open('POST', 'http://localhost:3000/save', true);
+                        xhr.open('POST', 'http://localhost:8007/api/send-resume/get-clean-resume-text', true);
                         xhr.setRequestHeader('Content-Type', 'application/json');
-                        xhr.send(JSON.stringify({ response }));
+                        xhr.send(JSON.stringify({ resume: response }));
 
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState == 4 && xhr.status == 200) {
+                                navigator.clipboard.writeText(
+                                    xhr.responseText
+                                ).then(() => {
+                                    document.querySelector('button').innerText = "Copied!";
+                                }).catch((e) => {
+                                    document.querySelector('button').innerText = "Error!";
+                                });
+                                document.querySelector('p').innerText = xhr.responseText;
                                 document.querySelector('button').innerText = "Saved in server!";
+                                setTimeout(() => {
+                                    document.querySelector('button').innerText = "Copy HTML";
+                                }, 2000);
                             }
                         }
 
