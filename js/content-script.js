@@ -2,8 +2,13 @@ let button = document.getElementById('html-cpy-btn');
 
 const domain = 'https://aicvpro.com';
 // const domain = 'http://localhost:8007';
+const localDomain = 'http://localhost:3000';
 
 const endpoint = '/api/send-resume/get-clean-resume-text';
+
+const redirectUri = '/create?tab=copy-paste';
+
+const redirectUrl = domain + redirectUri;
 
 const url = domain + endpoint;
 
@@ -17,6 +22,10 @@ if (button) {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             if (tabs.length > 0) {
                 const firstTab = tabs[0];
+                if (!firstTab.url.includes('linkedin.com')) {
+                    alert('Please open your LinkedIn profile first');
+                    return;
+                }
                 chrome.tabs.sendMessage(firstTab.id ?? -1, { message: 'copy-html-action' }, (resume) => {
                     if (resume) {
                         var xhr = new XMLHttpRequest();
@@ -33,12 +42,14 @@ if (button) {
                                     xhr.responseText
                                 ).then(() => {
                                     document.querySelector('button').innerText = "Copied!";
+                                    chrome.tabs.update({ url: redirectUrl });
+                                    window.close();
                                 }).catch((e) => {
                                     document.querySelector('button').innerText = "Error!";
                                 });
 
                                 document.querySelector('p').innerText = xhr.responseText;
-                                
+
                                 setTimeout(() => {
                                     document.querySelector('button').innerText = "Copy Profile";
                                 }, 4000);
@@ -62,6 +73,8 @@ if (button) {
                         }
                     }
                 });
+            } else {
+                alert('Please open your LinkedIn profile first');
             }
 
         });
