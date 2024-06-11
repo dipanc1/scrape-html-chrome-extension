@@ -30,7 +30,7 @@ if (button) {
                     if (resume) {
                         var xhr = new XMLHttpRequest();
                         document.querySelector('button').innerText = "Processing...";
-                        document.querySelector('p').innerText = "Copied resume is being processed...";
+                        document.querySelector('p').innerText = "Copied profile is being processed...";
 
                         xhr.open('POST', url, true);
                         xhr.setRequestHeader('Content-Type', 'application/json');
@@ -51,7 +51,7 @@ if (button) {
                                 document.querySelector('p').innerText = xhr.responseText;
 
                                 setTimeout(() => {
-                                    document.querySelector('button').innerText = "Copy Profile";
+                                    document.querySelector('button').innerText = "Send Profile to AICVPro";
                                 }, 4000);
                             }
                         }
