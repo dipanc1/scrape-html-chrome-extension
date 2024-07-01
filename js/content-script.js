@@ -22,7 +22,10 @@ if (button) {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             if (tabs.length > 0) {
                 const firstTab = tabs[0];
-                if (!firstTab.url) document.querySelector('p').innerText = "Please open your LinkedIn profile first";
+                if (!firstTab.url) {
+                    document.querySelector('p').innerText = "Please open your LinkedIn profile first";
+                    return;
+                }
                 if (!firstTab.url.includes('linkedin.com')) {
                     document.querySelector('p').innerText = "Please open your LinkedIn profile first";
                     return;
