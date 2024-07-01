@@ -65,7 +65,7 @@ if (button) {
                         }
 
                         xhr.onload = function () {
-                            document.querySelector('button').innerText = "Saved in server!";
+                            document.querySelector('button').innerText = "Loaded!";
                         }
 
                         xhr.onprogress = function () {
