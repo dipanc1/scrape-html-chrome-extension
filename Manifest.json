@@ -14,7 +14,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage", "scripting", "activeTabs"],
+  "permissions": ["storage", "scripting", "activeTab"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
