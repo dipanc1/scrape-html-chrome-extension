@@ -14,7 +14,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage", "scripting", "activeTab"],
+  "permissions": ["storage", "scripting", "https://www.linkedin.com"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
