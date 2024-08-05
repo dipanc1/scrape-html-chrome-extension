@@ -140,7 +140,6 @@ if (copyJobDescriptionbutton) {
                                     xhr.responseText
                                 ).then(() => {
                                     copyJobDescriptionbutton.innerText = "Copied!";
-                                    text.innerText = xhr.responseText;
                                     chrome.tabs.update({ url: redirectJobDescriptionCopyUrl });
                                     window.close();
                                 }).catch((e) => {
