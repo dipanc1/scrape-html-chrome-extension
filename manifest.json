@@ -1,7 +1,7 @@
 {
   "name": "AI CV Pro",
-  "version": "0.0.1",
-  "description": "AI CV Pro is a chrome extension that parses your linkedin profile and generates a resume for you.",
+  "version": "0.0.2",
+  "description": "AI CV Pro is a chrome extension that parses your linkedin profile and generates a resume for you, you can also get job description from a job post",
   "manifest_version": 3,
   "author": "Dipan Chhabra",
   "action": {
