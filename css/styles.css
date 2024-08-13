@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Martel:wght@400;600;700&display=swap');
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     background-color: #f4f4f4;
     border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    background: linear-gradient(135deg, #3B3089 0%, #591D47 100%);
 }
 
 .container {
     width: 400px;
-    margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +19,13 @@ body {
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+h1:hover {
+    color: #FFC737;
+    scale: 1.03;
 }
 
 .buttons {
@@ -28,11 +34,10 @@ h1 {
     height: 95px;
     align-items: center;
     flex-direction: column;
-    width: 100%;
 }
 
 #profile-html-cpy-btn {
-    background-color: #9f85f7;
+    background-color: rgba(159, 133, 247, 0.2);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -48,12 +53,12 @@ h1 {
 }
 
 #profile-html-cpy-btn:hover {
-    background-color: #6725f4;
+    background-color: #a15e0f;
     transform: scale(1.03);
 }
 
 #job-description-html-cpy-btn {
-    background-color: #C37D16;
+    background-color: rgba(159, 133, 247, 0.2);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -74,21 +79,67 @@ h1 {
 }
 
 .text {
-    margin: 20px 0;
+    height: 50px;
 }
 
 p {
+    color: white;
     font-size: 16px;
+    cursor: not-allowed;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px 0;
+    color: white;
+    text-decoration: underline;
+    transition-duration: 0.4s;
+}
+
+h3:hover {
+    color: #FFC737;
+}
+
+.instructions {
+    height: 60px;
+    overflow-y: scroll;
+    color: white;
+}
+
+.instructions::-webkit-scrollbar {
+    width: 5px;
+}
+
+.instructions::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #FFC737;
+    outline: 1px solid slategrey;
+}
+
+.instructions::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px #FFC737;
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: circle;
+    list-style-position: inside;
     padding: 0;
 }
 
 li {
     font-size: 10px;
     line-height: 1.5;
-    margin-bottom: 2px;
+    margin: 2px;
     font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+li::marker:hover {
+    color: #FFC737;
+}
+
+li:hover {
+    color: #FFC737;
 }

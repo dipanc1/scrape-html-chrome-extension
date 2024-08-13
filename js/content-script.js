@@ -22,7 +22,7 @@ const createResumeEndpoint = '/api/send-resume/get-clean-resume-text';
 const sendJobDescriptionEndpoint = '/api/send-job-description/get-clean-job-description-text';
 
 const redirectCreateResumeUri = '/create?tab=copy-paste';
-const redirectJobDescriptionCopyUri = '/builder?jobDescription=copy-paste';
+const redirectJobDescriptionCopyUri = '/builder?syncWithJobDescription';
 
 const redirectCreateResumeUrl = domain + redirectCreateResumeUri;
 const redirectJobDescriptionCopyUrl = domain + redirectJobDescriptionCopyUri;
